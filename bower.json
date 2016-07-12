@@ -1,0 +1,20 @@
+{
+  "name": "framework",
+  "description": "Framework",
+  "main": "",
+  "keywords": [
+    "myframework"
+  ],
+  "authors": [
+    "sarvani"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
