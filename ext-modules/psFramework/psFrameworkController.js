@@ -2,12 +2,13 @@
  * Created by sssgss on 6/28/16.
  */
 angular.module("psFramework")
-    .controller("psFrameworkController",['$scope','$rootScope','$window','$timeout',function($scope,$rootScope,$window,$timeout){
+    .controller("psFrameworkController", ['$scope', '$rootScope', '$window', '$timeout', '$location', function ($scope, $rootScope, $window, $timeout, $location) {
         $scope.isMenuVisible = true;
         $scope.isMenuVertical = true;
         $scope.isMenuButtonVisible = true;
         $scope.$on('ps-menu-item-selected-event',function(evt,data){
             $scope.routeString = data.route;
+            $location.path(data.route);
             checkWidth();
             broadcastMenuState();
         });
@@ -22,6 +23,9 @@ angular.module("psFramework")
         });
         $scope.$on('ps-menu-orientation-event-changed',function(evt,data){
            $scope.isMenuVertical = data.isMenuVertical;
+            $timeout(function () {
+                $($window).trigger('resize');
+            })
         });
         var checkWidth = function(){
             var width = Math.max( $($window).width(),$window.innerWidth);
@@ -37,7 +41,7 @@ angular.module("psFramework")
             $rootScope.$broadcast('ps-menu-show',
                 {
                     show: $scope.isMenuVisible,
-                    //isMenuVertical: $scope.isMenuVertical
+                    //isMenuVertical: $scope.isMenuVertical,
                     allowHorizontalToggle : !$scope.isMenuButtonVisible
                 });
         }

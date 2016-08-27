@@ -1,4 +1,4 @@
 /**
  * Created by sssgss on 6/28/16.
  */
-angular.module("psDashboard",[]);
+angular.module("psDashboard", ["gridster", "ui.bootstrap"]);

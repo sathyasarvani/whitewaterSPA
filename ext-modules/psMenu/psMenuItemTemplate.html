@@ -1,8 +1,7 @@
-
-    <li class="ps-selectable-items" ng-class="{'ps-item-horizontal' : !isMenuVertical()}">
+<li class="ps-selectable-items" ng-class="{'ps-item-horizontal' : !isVertical()}">
         <div class="ps-ps-selectable-items noselect">
             <i class="fa {{ icon }} ps-menu-icon"></i>
         {{ label }}
         </div>
-        <i ng-if="isActive() && isMenuVertical()" class="fa fa-2x fa-caret-left ps-menu-active-indicator"></i>
+    <i ng-if="isActive() && isVertical()" class="fa fa-2x fa-caret-left ps-menu-active-indicator"></i>
     </li>

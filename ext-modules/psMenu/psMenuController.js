@@ -4,7 +4,7 @@
 angular.module("psMenu")
     .controller('psMenuController',['$scope','$rootScope',function($scope,$rootScope){
         $scope.showMenu =true;
-        $scope.isMenuVertical = true;
+        $scope.isVertical = true;
         $scope.allowHorizontalToggle = true;
         this.getActiveElement = function(){
           return $scope.activeElement;
@@ -12,8 +12,8 @@ angular.module("psMenu")
         this.setActiveElement = function(el){
             $scope.activeElement = el;
         };
-        this.isMenuVertical = function(){
-            return $scope.isMenuVertical;
+        this.isVertical = function () {
+            return $scope.isVertical;
         }
         this.setRoute = function(route){
             $rootScope.$broadcast('ps-menu-item-selected-event',{ route: route});
@@ -31,10 +31,10 @@ angular.module("psMenu")
               if($scope.openMenuScope){
                   $scope.openMenuScope.closeMenu();
               }
-              $scope.isMenuVertical = !$scope.isMenuVertical;
-              $scope.$broadcast('ps-menu-orientation-event-changed',
+            $scope.isVertical = !$scope.isVertical;
+            $rootScope.$broadcast('ps-menu-orientation-event-changed',
                   {
-                      isMenuVertical : $scope.isMenuVertical
+                      isMenuVertical: $scope.isVertical
                   });
         };
 

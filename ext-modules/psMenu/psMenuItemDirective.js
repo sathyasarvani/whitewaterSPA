@@ -15,8 +15,8 @@ angular.module('psMenu').directive('psMenuItem',function(){
             scope.isActive = function(){
                 return el === ctrl.getActiveElement();
             }
-            scope.isMenuVertical = function(){
-                return ctrl.isMenuVertical() || el.parents('.ps-subitem-section').length > 0;
+            scope.isVertical = function () {
+                return ctrl.isVertical() || el.parents('.ps-subitem-section').length > 0;
             }
             el.on('click',function(evt){
                 evt.stopPropagation();

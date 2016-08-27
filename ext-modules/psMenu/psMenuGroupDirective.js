@@ -22,8 +22,8 @@ angular.module('psMenu').directive('psMenuGroup',function(){
                     }
                     ctrl.setOpenMenuScope(scope);
                 }
-                scope.isMenuVertical = function(){
-                    return ctrl.isMenuVertical() || el.parents('.ps-subitem-section').length > 0;
+            scope.isVertical = function () {
+                return ctrl.isVertical() || el.parents('.ps-subitem-section').length > 0;
                 }
                 scope.setSubmenuPosition = function(){
                     var pos = el.offset();

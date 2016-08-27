@@ -1,10 +1,15 @@
-<div class="ps-menu-area" ng-show="showMenu"
-     ng-class="{'ps-menu-area-vertical' :isMenuVertical , 'ps-menu-area-horizontal' : !isMenuVertical}">
+<!--<div class="ps-menu-area" -->
+<!--ng-show="showMenu"-->
+<!--ng-class="{'ps-menu-area-vertical' :isMenuVertical , 'ps-menu-area-horizontal' : !isMenuVertical}">-->
+<div>
     <ul class="ps-menu" ng-transclude></ul>
-        <a class="btn ps-menu-layout-button"
-           ng-show="allowHorizontalToggle"
-           ng-class="{'ps-layout-btn-horizontal':!isMenuVertical}"
-           ng-click="toggleMenuOrientation()">
-            <i class="fa"  ng-class="{'fa-chevron-up':isMenuVertical ,'fa-chevron-left':!isMenuVertical}"></i>
-        </a>
+    <a class="btn ps-menu-layout-button"
+       ng-show="allowHorizontalToggle"
+       ng-class="{'ps-layout-btn-horizontal':!isVertical}"
+       ng-click="toggleMenuOrientation()">
+        <i class="fa" ng-class="{'fa-chevron-up':isVertical ,'fa-chevron-left':!isVertical}"></i>
+    </a>
 </div>
+
+
+
